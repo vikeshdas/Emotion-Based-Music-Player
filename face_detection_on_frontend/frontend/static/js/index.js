@@ -12,7 +12,8 @@ let obj;
 async function load_models() {
   obj = new Readface();
   let models = "http://127.0.0.1:5000/static/face_api_models/";
-  faceapi.nets.tinyFaceDetector.loadFromUri(models),
+
+    faceapi.nets.tinyFaceDetector.loadFromUri(models),
     faceapi.nets.faceLandmark68Net.loadFromUri(models),
     faceapi.nets.faceRecognitionNet.loadFromUri(models),
     faceapi.nets.faceExpressionNet.loadFromUri(models)

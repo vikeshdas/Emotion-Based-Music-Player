@@ -29,7 +29,7 @@ def random_music():
     emotion =request.data
     emotion=emotion.decode("utf-8")
     music=random.choice(os.listdir('songs/' + emotion))
-    music='../dataset/songs/'+emotion+'/'+music
+    music='songs/'+emotion+'/'+music
 
     with open(music, 'rb') as fd:
         contents = fd.read()
