@@ -16,7 +16,7 @@ class read_frames:
     """
     def __init__(self):
         self.face_classifier = cv2.CascadeClassifier(r'../haarcascade_frontalface_default.xml')
-        self.classifier =load_model(r'../model/model.h5')
+        self.classifier =load_model(r'model/model.h5')
         self.emotion_labels = ['Angry','Disgust','Fear','Happy','Neutral', 'Sad', 'Surprise']
 
     def emotion(self, json_data):
@@ -66,8 +66,8 @@ class read_frames:
          
         maxfrequency = max(zip(frame_frequency.values(), frame_frequency.keys()))[1]
 
-        music=random.choice(os.listdir('../dataset/songs/' + maxfrequency))
-        music='../dataset/songs/'+maxfrequency+'/'+music
+        music=random.choice(os.listdir('songs/' + maxfrequency))
+        music='songs/'+maxfrequency+'/'+music
         print(music)
 
         with open(music, 'rb') as fd:
